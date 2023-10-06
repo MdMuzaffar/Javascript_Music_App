@@ -23,41 +23,42 @@ addTask.addEventListener('click', () => {
                                 <button> Delete</button>`;
     }
 
-
+    listTask.appendChild(taskItems);
+    inputValue.value = '';
 });
 
 listTask.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
         event.target.parentElement.remove();
     } else if (event.target.tagName === 'INPUT') {
-        event.target.nextElementSibling.classList.toogle('complete');
+        event.target.nextElementSibling.classList.toogle('completed');
     }
 });
 
-const taskInput = document.getElementById('taskInput');
-const addTaskButton = document.getElementById('addTask');
-const taskList = document.getElementById('taskList');
+// const taskInput = document.getElementById('taskInput');
+// const addTaskButton = document.getElementById('addTask');
+// const taskList = document.getElementById('taskList');
 
-addTaskButton.addEventListener('click', () => {
-    const taskText = taskInput.value.trim();
-    if (taskText !== '') {
-        const taskItem = document.createElement('li');
-        taskItem.innerHTML = `
-                    <input type="checkbox">
-                    <span>${taskText}</span>
-                    <button>Delete</button>
-                `;
+// addTaskButton.addEventListener('click', () => {
+//     const taskText = taskInput.value.trim();
+//     if (taskText !== '') {
+//         const taskItem = document.createElement('li');
+//         taskItem.innerHTML = `
+//                     <input type="checkbox">
+//                     <span>${taskText}</span>
+//                     <button>Delete</button>
+//                 `;
 
-        taskList.appendChild(taskItem);
+//         taskList.appendChild(taskItem);
 
-        taskInput.value = ''; // Clear the input field
-    }
-});
+//         taskInput.value = ''; // Clear the input field
+//     }
+// });
 
-taskList.addEventListener('click', (event) => {
-    if (event.target.tagName === 'BUTTON') {
-        event.target.parentElement.remove(); // Remove the task when the delete button is clicked
-    } else if (event.target.tagName === 'INPUT') {
-        event.target.nextElementSibling.classList.toggle('completed'); // Toggle the "completed" class
-    }
-});
+// taskList.addEventListener('click', (event) => {
+//     if (event.target.tagName === 'BUTTON') {
+//         event.target.parentElement.remove(); // Remove the task when the delete button is clicked
+//     } else if (event.target.tagName === 'INPUT') {
+//         event.target.nextElementSibling.classList.toggle('completed'); // Toggle the "completed" class
+//     }
+// });
