@@ -14,6 +14,13 @@ const inputValue = document.getElementById('inputValue');
 const addTask = document.getElementById('addTask');
 const listTask = document.getElementById('listTask');
 
+const inputCheck = () => {
+    debugger
+    return inputValue;
+}
+
+console.log(inputCheck())
+
 addTask.addEventListener('click', () => {
     const inputText = inputValue.value.trim();
     if (inputText !== '') {
@@ -27,13 +34,13 @@ addTask.addEventListener('click', () => {
     inputValue.value = '';
 });
 
-listTask.addEventListener('click', (event) => {
-    if (event.target.tagName === 'BUTTON') {
-        event.target.parentElement.remove();
-    } else if (event.target.tagName === 'INPUT') {
-        event.target.nextElementSibling.classList.toogle('completed');
-    }
-});
+// listTask.addEventListener('click', (event) => {
+//     if (event.target.tagName === 'BUTTON') {
+//         event.target.parentElement.remove();
+//     } else if (event.target.tagName === 'INPUT') {
+//         event.target.nextElementSibling.classList.toogle('completed');
+//     }
+// });
 
 // const taskInput = document.getElementById('taskInput');
 // const addTaskButton = document.getElementById('addTask');
