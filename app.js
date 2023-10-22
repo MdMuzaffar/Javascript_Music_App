@@ -69,3 +69,5 @@ addTask.addEventListener('click', () => {
 //         event.target.nextElementSibling.classList.toggle('completed'); // Toggle the "completed" class
 //     }
 // });
+
+localStorage.setItem('amazon_user', JSON.stringify(res.data));
